@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import uniqid from "uniqid";
+import Modal from "react-modal";
+Modal.setAppElement('#root');
 
 const EducationForm = (props) => {
-
     const [education, setEducation] = useState({
         id: uniqid(),
         school: "",
@@ -56,13 +57,18 @@ const EducationForm = (props) => {
     }
     
     return (
-        <div>
+        <Modal
+            isOpen={props.showDisplay}
+            contentLabel="Add education"
+            closeTimeoutMS={200}
+        >
             <form onSubmit={onSubmit}>
                 <input 
                     type="text"
                     placeholder="School"
                     value={education.school}
                     onChange={onSchoolChange}
+                    required
                 />
                 <input 
                     type="text"
@@ -81,13 +87,14 @@ const EducationForm = (props) => {
                     placeholder="Dates"
                     value={education.dates}
                     onChange={onDatesChange}
+                    required
                 />
                 <div>    
                     <button type="submit">Save</button>
-                    <button>Cancel</button>
+                    <button type="button" onClick={props.displayChange}>Cancel</button>
                 </div>
             </form>
-        </div>
+        </Modal>
 
     )
 }

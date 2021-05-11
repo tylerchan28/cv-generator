@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import uniqid from "uniqid";
+import Modal from "react-modal";
+Modal.setAppElement('#root');
 
 const PracticalExperienceForm = (props) => {
     const [practicalExp, setPracticalExp] = useState({
@@ -55,38 +57,44 @@ const PracticalExperienceForm = (props) => {
     }
     
     return (
-        <div>
+        <Modal
+            isOpen={props.showDisplay}
+        >
             <form onSubmit={onSubmit}>
                 <input 
                     type="text"
                     placeholder="Position"
                     value={practicalExp.position}
                     onChange={onPositionChange}
+                    required
                 />
                 <input 
                     type="text"
                     placeholder="Company"
                     value={practicalExp.company}
                     onChange={onCompanyChange}
+                    required
                 />
                 <input 
                     type="text"
                     placeholder="Dates"
                     value={practicalExp.dates}
                     onChange={onDatesChange}
+                    required
                 />
                 <input 
                     type="text"
                     placeholder="Roles"
                     value={practicalExp.roles}
                     onChange={onRolesChange}
+                    required
                 />
                 <div>
                     <button type="submit">Save</button>
-                    <button>Cancel</button>
+                    <button type="button" onClick={props.displayChange}>Cancel</button>
                 </div>
             </form>
-        </div>
+        </Modal>
     )
 }
 

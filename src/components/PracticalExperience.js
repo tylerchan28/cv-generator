@@ -5,11 +5,16 @@ import PracticalExperienceForm from "./PracticalExperienceForm";
 const PracticalExperience = () => {
     
     let [practicalInfo, setPracticalInfo] = useState([])
+    let [showDisplay, setShowDisplay] = useState(false);
+
+    const displayChange = () => {
+        setShowDisplay(!showDisplay)
+    }
 
     const saveInfo = (info) => {
         const allInfo = [...practicalInfo, info]
         setPracticalInfo(allInfo)
-        console.log(allInfo)
+        displayChange()
     }
     
     const deleteInfo = (itemToRemove) => {
@@ -20,7 +25,6 @@ const PracticalExperience = () => {
 
     return (
         <div>
-            Practical Experience
             {practicalInfo.map((practicalItem) => (
                 <PracticalDisplay 
                     practicalItem={practicalItem}
@@ -28,7 +32,10 @@ const PracticalExperience = () => {
                     deleteInfo={deleteInfo}
                 />
             ))}
+            <button onClick={displayChange}>+Practical Experience</button>
             <PracticalExperienceForm 
+                displayChange={displayChange}
+                showDisplay={showDisplay}
                 saveInfo={saveInfo}
             />
         </div>

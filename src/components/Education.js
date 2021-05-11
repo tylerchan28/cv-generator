@@ -4,13 +4,18 @@ import EducationForm from "./EducationForm";
 
 
 const Education = () => {
-
     let [eduFormInfo, addEduFormInfo] = useState([])
+    let [showDisplay, setShowDisplay] = useState(false)
+
+    const displayChange = () => {
+        setShowDisplay(!showDisplay);
+        console.log("working")
+    }
 
     const saveInfo = (info) => {
         const allInfo = [...eduFormInfo, info]
         addEduFormInfo(allInfo)
-        console.log(allInfo)
+        displayChange()
     }
 
     const deleteInfo = (itemToRemove) => {
@@ -21,7 +26,6 @@ const Education = () => {
 
     return (
         <div>
-           Education
             {eduFormInfo.map((eduItem) => (
                 <EducationDisplay 
                     eduItem={eduItem} 
@@ -29,8 +33,10 @@ const Education = () => {
                     deleteInfo={deleteInfo}    
                 />
            ))}
-        
+           <button onClick={displayChange}>+Education</button>
             <EducationForm 
+                showDisplay={showDisplay}
+                displayChange={displayChange}
                 saveInfo={saveInfo}
             />
         </div>

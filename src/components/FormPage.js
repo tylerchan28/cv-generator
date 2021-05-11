@@ -2,14 +2,14 @@
 import React from "react";
 import Education from "./Education";
 import GeneralInfo from "./GeneralInfo";
-import PracticalExperienceForm from "./PracticalExperienceForm";
+import PracticalExperience from "./PracticalExperience";
 
 const FormPage = () => {
     return (
         <div>
             <GeneralInfo />
             <Education />
-            <PracticalExperienceForm />
+            <PracticalExperience />
         </div>
     )
 }

@@ -1,18 +1,20 @@
 import React, { useState } from "react";
+import uniqid from "uniqid";
 
-const PracticalExperienceForm = () => {
+const PracticalExperienceForm = (props) => {
     const [practicalExp, setPracticalExp] = useState({
-        title: "",
+        id: uniqid(),
+        position: "",
         company: "",
         dates: "",
         roles: ""
     })
 
-    const onTitleChange = (e) => {
-        const title = e.target.value;
+    const onPositionChange = (e) => {
+        const position = e.target.value;
         setPracticalExp({
             ...practicalExp,
-            title
+            position
         })
     }
     
@@ -40,33 +42,49 @@ const PracticalExperienceForm = () => {
         })
     }
 
+    const onSubmit = (e) => {
+        e.preventDefault();
+        props.saveInfo(practicalExp);
+        setPracticalExp({
+            id: uniqid(),
+            position: "",
+            company: "",
+            dates: "",
+            roles: ""
+        })
+    }
+    
     return (
         <div>
-            <form>
+            <form onSubmit={onSubmit}>
                 <input 
                     type="text"
-                    placeholder="Title"
-                    value={practicalExp.title}
-                    onChange={onTitleChange}
+                    placeholder="Position"
+                    value={practicalExp.position}
+                    onChange={onPositionChange}
                 />
                 <input 
                     type="text"
-                    placeholder="company"
-                    value={practicalExp.title}
+                    placeholder="Company"
+                    value={practicalExp.company}
                     onChange={onCompanyChange}
                 />
                 <input 
                     type="text"
-                    placeholder="dates"
-                    value={practicalExp.title}
+                    placeholder="Dates"
+                    value={practicalExp.dates}
                     onChange={onDatesChange}
                 />
                 <input 
                     type="text"
-                    placeholder="roles"
-                    value={practicalExp.title}
+                    placeholder="Roles"
+                    value={practicalExp.roles}
                     onChange={onRolesChange}
                 />
+                <div>
+                    <button type="submit">Save</button>
+                    <button>Cancel</button>
+                </div>
             </form>
         </div>
     )

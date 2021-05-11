@@ -8,15 +8,26 @@ const Education = () => {
     let [eduFormInfo, addEduFormInfo] = useState([])
 
     const saveInfo = (info) => {
-        const newEduInfo = [...eduFormInfo, info]
-        addEduFormInfo(newEduInfo)
+        const allInfo = [...eduFormInfo, info]
+        addEduFormInfo(allInfo)
+        console.log(allInfo)
+    }
+
+    const deleteInfo = (itemToRemove) => {
+        const allInfo = [...eduFormInfo];
+        const newInfo = allInfo.filter((infoItem) => itemToRemove.id !== infoItem.id)
+        addEduFormInfo(newInfo);
     }
 
     return (
         <div>
            Education
             {eduFormInfo.map((eduItem) => (
-                <EducationDisplay eduItem={eduItem} key={eduItem.school}/>
+                <EducationDisplay 
+                    eduItem={eduItem} 
+                    key={eduItem.id}
+                    deleteInfo={deleteInfo}    
+                />
            ))}
         
             <EducationForm 

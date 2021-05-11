@@ -1,8 +1,10 @@
 import React, { useState } from "react";
+import uniqid from "uniqid";
 
 const EducationForm = (props) => {
 
     const [education, setEducation] = useState({
+        id: uniqid(),
         school: "",
         degree: "",
         major: "",
@@ -45,6 +47,7 @@ const EducationForm = (props) => {
         e.preventDefault();
         props.saveInfo(education);
         setEducation({
+            id: uniqid(),
             school: "",
             degree: "",
             major: "",

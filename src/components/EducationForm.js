@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 
-const Education = () => {
+const EducationForm = (props) => {
+
     const [education, setEducation] = useState({
         school: "",
         degree: "",
@@ -40,9 +41,20 @@ const Education = () => {
         })
     }
     
+    const onSubmit = (e) => {
+        e.preventDefault();
+        props.saveInfo(education);
+        setEducation({
+            school: "",
+            degree: "",
+            major: "",
+            dates: ""
+        })
+    }
+    
     return (
         <div>
-            <form>
+            <form onSubmit={onSubmit}>
                 <input 
                     type="text"
                     placeholder="School"
@@ -67,12 +79,14 @@ const Education = () => {
                     value={education.dates}
                     onChange={onDatesChange}
                 />
-                
+                <div>    
+                    <button type="submit">Save</button>
+                    <button>Cancel</button>
+                </div>
             </form>
-        <button>Cancel</button>
         </div>
 
     )
 }
 
-export default Education;
+export default EducationForm;

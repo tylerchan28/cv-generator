@@ -25,20 +25,23 @@ const Education = () => {
     }
 
     return (
-        <div className="education-list">
-            {eduFormInfo.map((eduItem) => (
-                <EducationDisplay 
-                    eduItem={eduItem} 
-                    key={eduItem.id}
-                    deleteInfo={deleteInfo}    
+        <div className="education-container">
+            <h2 className="section-title">Education</h2>
+            <div>
+                {eduFormInfo.map((eduItem) => (
+                    <EducationDisplay 
+                        eduItem={eduItem} 
+                        key={eduItem.id}
+                        deleteInfo={deleteInfo}    
+                    />
+            ))}
+            <button className="add-button" onClick={displayChange}>+Education</button>
+                <EducationForm 
+                    showDisplay={showDisplay}
+                    displayChange={displayChange}
+                    saveInfo={saveInfo}
                 />
-           ))}
-           <button className="add-button" onClick={displayChange}>+Education</button>
-            <EducationForm 
-                showDisplay={showDisplay}
-                displayChange={displayChange}
-                saveInfo={saveInfo}
-            />
+            </div>
         </div>
     )
 }

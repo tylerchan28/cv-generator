@@ -24,7 +24,8 @@ const PracticalExperience = () => {
     }
 
     return (
-        <div>
+        <div className="experience-container">
+            <h2 className="section-title">Practical Experience</h2>
             {practicalInfo.map((practicalItem) => (
                 <PracticalDisplay 
                     practicalItem={practicalItem}

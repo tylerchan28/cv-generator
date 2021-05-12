@@ -59,39 +59,42 @@ const PracticalExperienceForm = (props) => {
     return (
         <Modal
             isOpen={props.showDisplay}
+            contentLabel="Add practical experience"
+            closeTimeoutMS={200}
+            className="modal"
         >
-            <form onSubmit={onSubmit}>
+            <form className="form-display" onSubmit={onSubmit}>
+                Position
                 <input 
                     type="text"
-                    placeholder="Position"
                     value={practicalExp.position}
                     onChange={onPositionChange}
                     required
                 />
+                Company
                 <input 
                     type="text"
-                    placeholder="Company"
                     value={practicalExp.company}
                     onChange={onCompanyChange}
                     required
                 />
+                Dates (MM/YYYY - MM/YYYY)
                 <input 
                     type="text"
-                    placeholder="Dates"
                     value={practicalExp.dates}
                     onChange={onDatesChange}
                     required
                 />
+                Roles
                 <textarea 
                     type="text"
-                    placeholder="Roles"
                     value={practicalExp.roles}
                     onChange={onRolesChange}
                     required
                 />
-                <div>
-                    <button type="submit">Save</button>
-                    <button type="button" onClick={props.displayChange}>Cancel</button>
+                <div className="form-button-container">
+                    <button className="form-button form-button--add" type="submit">Add</button>
+                    <button className="form-button form-button--cancel" type="button" onClick={props.displayChange}>Cancel</button>
                 </div>
             </form>
         </Modal>

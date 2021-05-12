@@ -61,10 +61,10 @@ const EducationForm = (props) => {
         <Modal
             isOpen={props.showDisplay}
             contentLabel="Add education"
-            closeTimeoutMS={200}
             className="modal"
+            closeTimeoutMS={200}
         >
-            <form className="education-form" onSubmit={onSubmit}>
+            <form className="form-display" onSubmit={onSubmit}>
                 School
                 <input 
                     type="text"

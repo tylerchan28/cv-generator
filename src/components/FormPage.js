@@ -8,9 +8,7 @@ const FormPage = () => {
     return (
         <div className="parent-container">
             <GeneralInfo />
-            <p className="section-title">Education</p>
-            <Education />
-            <p className="section-title">Practical Experience</p>
+            <Education />   
             <PracticalExperience />
         </div>
     )

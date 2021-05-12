@@ -32,7 +32,7 @@ const PracticalExperience = () => {
                     deleteInfo={deleteInfo}
                 />
             ))}
-            <button onClick={displayChange}>+Practical Experience</button>
+            <button className="add-button" onClick={displayChange}>+Practical Experience</button>
             <PracticalExperienceForm 
                 displayChange={displayChange}
                 showDisplay={showDisplay}

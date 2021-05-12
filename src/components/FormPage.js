@@ -6,9 +6,11 @@ import PracticalExperience from "./PracticalExperience";
 
 const FormPage = () => {
     return (
-        <div>
+        <div className="parent-container">
             <GeneralInfo />
+            <p className="section-title">Education</p>
             <Education />
+            <p className="section-title">Practical Experience</p>
             <PracticalExperience />
         </div>
     )

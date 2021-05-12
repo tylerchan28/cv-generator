@@ -34,26 +34,31 @@ const GeneralInfo = () => {
 
     return (
         <div>
-            <form>
+            <form className="general-info-form">
                 <input 
+                    className="input-name"
                     type="text"
                     placeholder="Name"
                     autoFocus
                     value={generalInfo.name}
                     onChange={handleNameChange}
                 />
-                <input 
-                    type="text"
-                    placeholder="E-mail"
-                    value={generalInfo.email}
-                    onChange={handleEmailChange}
-                />
-                <input 
-                    type="text"
-                    placeholder="Phone Number"
-                    value={generalInfo.phone}
-                    onChange={handlePhoneChange}
-                />
+                <div className="input-socials">
+                    <input 
+                        className="input-socials-email"
+                        type="text"
+                        placeholder="E-mail"
+                        value={generalInfo.email}
+                        onChange={handleEmailChange}
+                    />
+                    <input 
+                        className="input-socials-phone"
+                        type="text"
+                        placeholder="Phone Number"
+                        value={generalInfo.phone}
+                        onChange={handlePhoneChange}
+                    />
+                </div>
             </form>
         </div>
     )

@@ -82,7 +82,7 @@ const PracticalExperienceForm = (props) => {
                     onChange={onDatesChange}
                     required
                 />
-                <input 
+                <textarea 
                     type="text"
                     placeholder="Roles"
                     value={practicalExp.roles}

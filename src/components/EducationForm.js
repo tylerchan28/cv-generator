@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import uniqid from "uniqid";
 import Modal from "react-modal";
+import "../App.css";
 Modal.setAppElement('#root');
 
 const EducationForm = (props) => {
@@ -61,37 +62,38 @@ const EducationForm = (props) => {
             isOpen={props.showDisplay}
             contentLabel="Add education"
             closeTimeoutMS={200}
+            className="modal"
         >
-            <form onSubmit={onSubmit}>
+            <form className="education-form" onSubmit={onSubmit}>
+                School
                 <input 
                     type="text"
-                    placeholder="School"
                     value={education.school}
                     onChange={onSchoolChange}
                     required
                 />
+                Degree
                 <input 
                     type="text"
-                    placeholder="Degree"
                     value={education.degree}
                     onChange={onDegreeChange}
                 />
+                Major
                 <input 
                     type="text"
-                    placeholder="Major"
                     value={education.major}
                     onChange={onMajorChange}
                 />
+                Dates Attended (MM/YYYY - MM/YYYY)
                 <input 
                     type="text"
-                    placeholder="Dates"
                     value={education.dates}
                     onChange={onDatesChange}
                     required
                 />
-                <div>    
-                    <button type="submit">Save</button>
-                    <button type="button" onClick={props.displayChange}>Cancel</button>
+                <div className="form-button-container">    
+                    <button className="form-button form-button--add" type="submit">Add</button>
+                    <button className="form-button form-button--cancel" type="button" onClick={props.displayChange}>Cancel</button>
                 </div>
             </form>
         </Modal>

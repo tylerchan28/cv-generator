@@ -1,0 +1,147 @@
+.modal {
+    align-items: center;
+    background-color: white;
+    border: 1px solid black;
+    display: flex;
+    height: 200px;
+    justify-content: center;
+    padding: 50px;
+    text-align: left;
+    width: 500px;
+}
+
+.ReactModalPortal .ReactModal__Overlay {
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+    transition: opacity 200ms ease-in-out;
+}
+
+.ReactModalPortal > div { 
+    opacity: 0;
+}
+
+.ReactModalPortal .ReactModal__Overlay--after-open {
+    opacity: 1;
+}
+
+.ReactModalPortal .ReactModal__Overlay--before-close {
+    opacity: 0;
+}
+
+.education-display {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    float: left;
+}
+
+.education-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input {
+    border: 2px solid black;
+    margin-bottom: 10px;
+}
+
+.delete-button {
+    background: none;
+    border: none;
+    color: red;
+    cursor: pointer;
+}
+
+.add-button {
+    background: none;
+    border: none;
+    color: blue;
+    cursor: pointer;
+}
+
+.form-button-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+}
+
+.form-button--add {
+    color: blue;
+}
+
+.form-button--cancel {
+    color: red;
+}
+
+.header-links {
+    display: flex;
+    margin-bottom: 20px;
+    justify-content: center;
+    align-items: center;
+}
+
+.header-item {
+    margin-right: 10px;
+    text-align: center;
+}
+
+.header-name {
+    text-align: center;
+}
+
+/* .education-list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+} */
+
+.parent-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.section-title {
+    display: flex;
+    font-size: 24px;
+}
+
+.general-info-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.input-socials {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+}
+
+.input-socials-email {
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+
+.input-socials-phone {
+    border: none;
+    text-align: center;
+    font-size: 16px;
+}
+.input-name {
+    border: none;
+    text-align: center;
+    font-size: 36px;
+}
+

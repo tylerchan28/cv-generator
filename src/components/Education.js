@@ -25,7 +25,7 @@ const Education = () => {
     }
 
     return (
-        <div>
+        <div className="education-list">
             {eduFormInfo.map((eduItem) => (
                 <EducationDisplay 
                     eduItem={eduItem} 
@@ -33,7 +33,7 @@ const Education = () => {
                     deleteInfo={deleteInfo}    
                 />
            ))}
-           <button onClick={displayChange}>+Education</button>
+           <button className="add-button" onClick={displayChange}>+Education</button>
             <EducationForm 
                 showDisplay={showDisplay}
                 displayChange={displayChange}

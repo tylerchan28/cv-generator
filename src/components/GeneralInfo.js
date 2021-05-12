@@ -13,7 +13,6 @@ const GeneralInfo = () => {
             ...generalInfo,
             name
         })
-        console.log(generalInfo.name);
     }
 
     const handleEmailChange = (e) => {

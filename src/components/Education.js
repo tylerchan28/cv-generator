@@ -9,7 +9,6 @@ const Education = () => {
 
     const displayChange = () => {
         setShowDisplay(!showDisplay);
-        console.log("working")
     }
 
     const saveInfo = (info) => {
